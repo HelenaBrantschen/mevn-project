@@ -16,8 +16,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="./dist/slotmachine.js"></script>
     <script src="./dist/jquery.slotmachine.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
   </head>
 
@@ -25,12 +23,11 @@
 
 
     <!-- Slot machine example -->
-    <div id="casino" style="padding-top:50px;">
+    <div id="casino" >
       <div class="content">
-        <h1>Use the API</h1>
 
-        <div>
-          <div id="casino1" class="slotMachine" style="margin-left: -65px;">
+        <div class="slot-wrapper">
+          <div id="casino1" class="slotMachine" style="">
             <div class="slot slot1"></div>
             <div class="slot slot2"></div>
             <div class="slot slot3"></div>
@@ -57,9 +54,10 @@
             <div class="slot slot6"></div>
           </div>
 
-          <div class="btn-group btn-group-justified" role="group">
-            <button id="casinoShuffle" type="button" class="btn btn-primary btn-lg">Shuffle!</button>
-          </div>
+          
+        </div>
+        <div class="btn-group btn-group-justified" role="group">
+          <button id="casinoShuffle" type="button" class="btn btn-primary btn-lg">Shuffle!</button>
         </div>
       </div>
     </div>
