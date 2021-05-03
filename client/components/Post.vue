@@ -1,6 +1,8 @@
 <template>
   <div class="post">
-    <img src="../static/assets/src/img01.png" />
+    <a href="">
+      <img src="../static/assets/src/img01.png" />
+    </a>
     <div class="title-position">
       <p class="title">Post title</p>
       <p class="subtitle">Subtitle</p>

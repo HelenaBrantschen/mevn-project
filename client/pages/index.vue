@@ -1,6 +1,13 @@
 <template>
   <div class="wrapper">
-    <div class="header"></div>
+    <div class="header">
+      <div class="nav">
+        <img id="mapicon" src="../static/assets/src/map_icon.png" onclick="" />
+      </div>
+      <div class="nav">
+        <a id="plus" onclick="createPost()">+</a>
+      </div>
+    </div>
     <div class="post-content">
       <div class="col-1">
         <Post />
@@ -60,13 +67,31 @@ export default {}
   justify-content: start;
   align-items: start;
   text-align: center;
-  margin-top: 10vh;
+  margin-top: 11vw;
 }
 .header {
   position: fixed;
   width: 100vw;
-  height: 10vh;
-  background-color: aqua;
-  z-index: 1000;
+  height: 16.5vw;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+.nav {
+  position: relative;
+  height: 100%;
+  width: 33.33%;
+  margin: auto, 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mapicon {
+  width: auto;
+  height: 8vh;
+  z-index: 999;
+}
+#plus {
+  font-size: 25pt;
 }
 </style>
