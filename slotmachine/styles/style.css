@@ -12,8 +12,8 @@
 
 
 .slotMachine .slot{
-  height:100px;
-  background-position-x: 55%;
+  height:128px;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -43,16 +43,18 @@
 
 /*
  * Casino
+ *
+ * background of the cols
  */
 #casino {
-  background-color: rgb(240, 150, 150);
+  background-color: white;
 }
 
 #casino  {
   height: 100vh;
 }
 
- #casino .content > div {
+ #casino .slot-wrapper {
    display: flex;
    align-items: stretch;
   width: 100vw;
@@ -67,20 +69,27 @@
 
 .slotMachine{
   width: 33.333333%;
-  border: 5px solid #CF5178;
+  border: 5px solid lightblue;
   display: inline-block;
 }
 
-#casino .btn-group {
-}
-
-#casino .btn-group .btn {
-  border: none;
-  background-color: rgb(209, 79, 119);
-}
-
 #casino .btn-group .btn:hover, .btn-group .btn:focus {
-  background-color: rgb(180, 75, 119);
+  background-color: rgb(170, 231, 251);
+}
+.btn-wrapper{
+  display: flex;
+}
+
+
+.btn-group{
+  justify-self: center;
+  
+}
+.btn {
+  border: none;
+  background-color: rgb(170, 231, 251);
+  width:100vw;
+  height:15vw;
 }
 
 

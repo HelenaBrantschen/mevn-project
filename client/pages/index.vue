@@ -1,13 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="header">
-      <div class="nav">
-        <img id="mapicon" src="../static/assets/src/map_icon.png" onclick="" />
-      </div>
-      <div class="nav">
-        <a id="plus" onclick="createPost()">+</a>
-      </div>
-    </div>
+    <Header />
     <div class="post-content">
       <div class="col-1">
         <Post />
@@ -75,6 +68,7 @@ export default {}
   height: 16.5vw;
   background-color: white;
   display: flex;
+  z-index: 500;
   justify-content: space-between;
 }
 .nav {
@@ -86,12 +80,14 @@ export default {}
   align-items: center;
   justify-content: center;
 }
-.mapicon {
+#mapicon {
+  position: relative;
   width: auto;
-  height: 8vh;
-  z-index: 999;
+  height: 7vh;
+  z-index: 501;
 }
 #plus {
-  font-size: 25pt;
+  font-size: 2.5rem;
+  font-weight: 200;
 }
 </style>

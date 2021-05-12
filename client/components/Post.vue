@@ -9,6 +9,7 @@
     </div>
   </div>
 </template>
+
 <style>
 .title-position {
   position: absolute;
@@ -19,7 +20,6 @@
 .subtitle {
   font-size: 20pt;
 }
-
 .post {
   width: 33.33vw;
   height: 33.33vw;

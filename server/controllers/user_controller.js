@@ -68,9 +68,16 @@ const deleteData = (req, res) => {
     });
 };
 
+/* diy server communication getting data*/
+
+
+
+
 module.exports = {
   createData,
   readData,
   updateData,
   deleteData,
+  sayHi,
+  updatePost,
 };
