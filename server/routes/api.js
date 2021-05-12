@@ -5,7 +5,7 @@ const {
   readData,
   updateData,
   deleteData,
-  sayHi,
+  
 
   updatePost,
 } = require('../controllers/user_controller');
