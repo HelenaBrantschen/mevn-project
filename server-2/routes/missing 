@@ -1,0 +1,5 @@
+//routes.js 
+
+router.patch('/:id', API.updatePost);
+router.delete('/:id', API.deletePost);
+ha a problem with patch an delete after restarting the server it works...
