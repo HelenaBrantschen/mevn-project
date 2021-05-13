@@ -27,6 +27,7 @@ module.exports = class API {
             });
         }
     };
+
     //create a post 
     static async createPost(req, res) {
         //
@@ -44,6 +45,7 @@ module.exports = class API {
             })
         }
     };
+
     //update a post more complicated for updating an element you must decide which one and store the other old values in a variable 
     static async updatePost(req, res) {
         const id = req.params.id;
@@ -57,38 +59,43 @@ module.exports = class API {
                 (err)
                 console.log(err);
             }
-        } else{
-                new_image = req.body.old_image;
-            }
-            const newPost = req.body;
-            newPost.image = new_image;
+        } else {
+            new_image = req.body.old_image;
+        }
+        const newPost = req.body;
+        newPost.image = new_image;
 
-            try{
-                await Post.findByIdAndUpdate(id, newPost);
-                res.status(200).json({message: 'Post successfully updated'})
-            }catch(err){ 
-                res.status(404).json({message: err.message});
-            }
-        };
+        try {
+            await Post.findByIdAndUpdate(id, newPost);
+            res.status(200).json({
+                message: 'Post successfully updated'
+            })
+        } catch (err) {
+            res.status(404).json({
+                message: err.message
+            });
+        }
+    };
 
-
-
-
-    
     //delete a post 
     static async deletePost(req, res) {
         const id = req.params.id;
-        try{
+        try {
             const result = await Post.findByIdAndDelete(id);
-            if (result.image!= ''){
-               try{ fs.unlinkSync('./uploads/'+result.image);
-            }catch (err){
-                console.log(err);
+            if (result.image != '') {
+                try {
+                    fs.unlinkSync('./uploads/' + result.image);
+                } catch (err) {
+                    console.log(err);
+                }
             }
-        }
-        res.status(200).json({message:'Post successfully deleted'})
-        }catch(err){
-            res.status(404).json({message: err.message})
+            res.status(200).json({
+                message: 'Post successfully deleted'
+            })
+        } catch (err) {
+            res.status(404).json({
+                message: err.message
+            })
         }
     };
 };

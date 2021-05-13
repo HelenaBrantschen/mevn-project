@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="nav">
-      <a id="plus" onclick="createPost()">+</a>
+       <a id="plus" onclick="createPost()">+</a>
     </div>
   </div>
 </template>
