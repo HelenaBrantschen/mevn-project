@@ -4,7 +4,7 @@ const url = "/api/post";
 export default class API {
     // to get all the posts from the server
 
-    static async fetchAllPosts() {
+    static async getAllPost() {
         const res = await axios.get(url);
         return res.data;
     }

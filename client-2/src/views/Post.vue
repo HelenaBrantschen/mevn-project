@@ -18,8 +18,9 @@
           <v-card-subtitle class="headline">
               <h3>{{ post.title }} </h3>
           </v-card-subtitle>
-          <v-card-text class="grey-text">
+          <v-card-text class="grey--text">
               <p>{{ post.content }}</p>
+              <p>{{ post.created }}</p>
           </v-card-text>
         </v-card>
       </v-col>
@@ -30,7 +31,7 @@
 <script>
 import API from "../api";
 export default {
-  data() {
+  data(){
     return {
       post: {},
     };

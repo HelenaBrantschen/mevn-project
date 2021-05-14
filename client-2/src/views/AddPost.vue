@@ -5,7 +5,7 @@
         <v-card class="pa-5">
           <v-card-title>Add new Post</v-card-title>
           <v-divider> </v-divider>
-          <v-form ref="form" @submit.prevent="submitForm()" class="pa-5" enctype="multipart/form-data">
+          <v-form ref="form" @submit.prevent="submitForm" class="pa-5" enctype="multipart/form-data">
             <v-text-field label="Title" v-model="post.title" prepend-icon="mdi-note" :rules="rules">
             </v-text-field>
 
@@ -37,8 +37,7 @@ export default {
             image:"",
         },
         image:"",
-        };
-        
+        };  
     },
     methods:{
         selectFile(file){
@@ -49,14 +48,14 @@ export default {
             formData.append('image', this.image);
             formData.append('title', this.post.title);
             formData.append('category', this.post.category);
-            formData.append('category', this.post.content);
-            if(this.$refs.form.validate()){
+            formData.append('content', this.post.content);
+            if(this.$refs.form.validate()){// if form is validated send to database
                 const response = await API.addPost(formData);
-                this.$router.push({name: "home", params:{ message: response.message } });
+                this.$router.push({name: 'home' , params:{ message: response.message } });
             }
 
 
-        }
-    }
+        },
+    },
 };
 </script>

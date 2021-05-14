@@ -39,7 +39,7 @@ export default {
     drawer: null,
     items: [
       { title: "Home", icon: "mdi-home", link: "/" },
-      { title: "AddPost", icon: "mdi-note-plus", link: "/add-post" },
+      { title: "Add Post", icon: "mdi-note-plus", link: "/add-post" },
       { title: "About", icon: "mdi-help-box", link: "/about" },
     ],
   }),

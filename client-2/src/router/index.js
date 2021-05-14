@@ -3,7 +3,6 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import AddPost from '../views/AddPost.vue'
 import Post from '../views/Post.vue'
-import About from '../views/About.vue'
 
 
 
@@ -29,7 +28,8 @@ const routes = [
   {
     path: '/about',
     name: 'about',
-    component: About
+
+    component:() => import("../views/About.vue"),
   }
 ]
 
