@@ -33,7 +33,7 @@ npm run serve
 
 ## C) slotmachine
 first sketch of moving posts, addapted slotmachine based on github project made with bootstrap. 
-````bash
+```bash
 cd slotmachine
 ```
 
