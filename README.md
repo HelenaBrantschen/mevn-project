@@ -30,7 +30,8 @@ cd client-2
 npm run serve
 ```
 ### should be connected to an live database, sent you an invite per mail.
-### next steps: try to adapt the app to my wishes, Should i stay with vueify or try to recreate without?
+### next steps: 
+try to adapt the app to my wishes, Should i stay with vueify or try to recreate without?
 
 ## C) slotmachine
 first sketch of moving posts, addapted slotmachine based on github project made with bootstrap. 
