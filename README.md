@@ -1,17 +1,19 @@
-#Hi Nick hope this helps a little...
+##Hi Nick hope this helps a little...
 
 
 # mevn-project
-# contains three parts:
+## contains three parts:
 
-# A) first sketch of the slotmachine/gallery based on mevn-cli setup: 
+## A) first sketch of the slotmachine/gallery based on mevn-cli setup: 
 
-# code inside client and server directory 
+code inside client and server directory 
 
+```bash
 cd mevn-project
 mevn serve
-# -client (opens Index.vue)
-# -server (DUMMY DATA BUT STILL EMPTY)
+```
+-client (opens Index.vue)
+-server (DUMMY DATA BUT STILL EMPTY)
 
 # next steps: create a better prototype of the navigation and UI similar to the sketch on figma.
 
