@@ -1,12 +1,15 @@
 <template>
   <div class="post">
-    <img src="../static/assets/src/img01.png" />
+    <a href="">
+      <img src="../static/assets/src/img01.png" />
+    </a>
     <div class="title-position">
       <p class="title">Post title</p>
       <p class="subtitle">Subtitle</p>
     </div>
   </div>
 </template>
+
 <style>
 .title-position {
   position: absolute;
@@ -17,7 +20,6 @@
 .subtitle {
   font-size: 20pt;
 }
-
 .post {
   width: 33.33vw;
   height: 33.33vw;
