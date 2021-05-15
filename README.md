@@ -15,7 +15,8 @@ mevn serve
 -client (opens Index.vue)
 -server (DUMMY DATA BUT STILL EMPTY)
 
-### next steps: create a better prototype of the navigation and UI similar to the sketch on figma.
+### next steps: 
+create a better prototype of the navigation and UI similar to the sketch on figma. https://www.figma.com/file/0Q6ESHakKU2ZeNoiZwX9Lb/APP-Men4
 
 
 ## B) CRUD Commands: made from a tutorial, working app with crud commands, created design with the plugin vueify (css framework similar to bootstrap syntax).
