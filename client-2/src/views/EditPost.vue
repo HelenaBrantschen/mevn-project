@@ -22,6 +22,8 @@
               label="Category"
               v-model="post.category"
               prepend-icon="mdi-view-list"
+              :disabled = "true"
+
             >
             </v-text-field>
 
@@ -29,6 +31,7 @@
               label="Content"
               v-model="post.content"
               prepend-icon="mdi-note-plus"
+              :disabled = "false"
             >
             </v-textarea>
             <v-file-input
@@ -44,6 +47,7 @@
             <v-btn type="submit" class="mt-3" color="success"
               >Update Post</v-btn
             >
+            
           </v-form>
         </v-card>
       </v-col>
