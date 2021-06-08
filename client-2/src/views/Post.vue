@@ -77,92 +77,7 @@
     <v-btn color="red" text @click="removePost(post._id)">Delete</v-btn>
   </div>
 </template>
-<style scoped>
- .v-text-field input {
-    font-size: 1.2em;
-    color:red;
-  }
 
-.img-container {
-  overflow: hidden;
-  align-content: center;
-  width: 100vw;
-  height: 30vh;
-  display: flex;
-}
-.header-img {
-  position: relative;
-  top: 0%;
-  width: 100%;
-  align-self: center;
-  height: auto;
-  min-height: 30vh;
-  padding: 0;
-}
-.date {
-  padding-top: 30px;
-  padding-left: 20px;
-  margin-bottom: 0px;
-}
-#title {
-  overflow: visible;
-  padding: 0;
-  max-height: unset;
-  padding-left: 20px;
-  padding-bottom: 20px;
-  font-weight:bold;
-  font-size: 26pt;
-  text-transform: uppercase;
-}
-.v-text-field > .v-input__control > .v-input__slot:before {
-    border-color: inherit;
-    border-style: none !important;
-    }
-p {
-  padding-left: 20px;
-  padding-right: 30px;
-}
-.btn {
-  opacity: 0.9;
-  border-radius: 50%;
-  height: 78px !important;
-  width: 78px !important;
-  transform: scale(0.75);
-}
-#plus_btn {
-  position: fixed;
-  bottom: 3%;
-  right: 3%;
-  z-index: 1000;
-  height: 78px !important;
-  width: 78px !important;
-  transform: scale(1);
-}
-
-#edit_btn{
-  border-radius: 50%;
-  background-color: white;
-  height:78px;
-  min-width:78px;
-  width:78;
-  position:absolute;
-  top:3%;
-  right:3%;
-  z-index:4
-}
-#update_btn{
-  position:absolute;
-  top:2%;
-  right:3%
-}
-
-.hidden {
-  display: none;
-}
-.shown {
-  display: initial;
-}
-</style>
 <script>
 import API from "../api";
 export default {
@@ -268,3 +183,96 @@ console.log("this works too")
   },
 };
 </script>
+<style scoped>
+ .v-text-field input {
+    font-size: 1.2em;
+    color:red;
+  }
+
+.img-container {
+  overflow: hidden;
+  align-content: center;
+  width: 100vw;
+  height: 30vh;
+  display: flex;
+}
+.header-img {
+  position: relative;
+  top: 0%;
+  width: 100%;
+  align-self: center;
+  height: auto;
+  min-height: 30vh;
+  padding: 0;
+}
+.date {
+  padding-top: 30px;
+  padding-left: 20px;
+  margin-bottom: 0px;
+}
+#title {
+  overflow: visible;
+  padding: 0;
+  max-height: unset;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  font-weight:bold;
+  font-size: 26pt;
+  text-transform: uppercase;
+}
+.v-text-field > .v-input__control > .v-input__slot:before {
+    border-color: inherit;
+    border-style: none !important;
+    }
+p {
+  padding-left: 20px;
+  padding-right: 30px;
+}
+.btn {
+  opacity: 0.9;
+  border-radius: 50%;
+  height: 78px !important;
+  width: 78px !important;
+  transform: scale(0.75);
+}
+#plus_btn {
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+  z-index: 1000;
+  height: 78px !important;
+  width: 78px !important;
+  transform: scale(1);
+}
+
+#edit_btn{
+  border-radius: 50%;
+  background-color: white;
+  height:78px;
+  min-width:78px;
+  width:78;
+  position:absolute;
+  top:3%;
+  right:3%;
+  z-index:4
+}
+#update_btn{
+  position:absolute;
+  top:2%;
+  right:3%
+}
+
+.hidden {
+  display: none;
+}
+.shown {
+  display: initial;
+}
+.input__control > .v-input__slot:after{
+  display: none;
+}
+.v-text-field > .v-input__control > .v-input__slot:after {
+    display: none;
+
+}
+</style>
