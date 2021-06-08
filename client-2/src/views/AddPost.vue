@@ -8,6 +8,23 @@
           <v-form ref="form" @submit.prevent="submitForm" class="pa-5" enctype="multipart/form-data">
             <v-text-field label="Title" v-model="post.title" prepend-icon="mdi-note" :rules="rules">
             </v-text-field>
+            <v-row>
+    <v-col
+      cols="12"
+      sm="6"
+    >
+      <v-date-picker
+        v-model="post.dates"
+        range
+      ></v-date-picker>
+    </v-col>
+    <v-col
+      cols="12"
+      sm="6"
+    >
+      model: {{ post.dates }}
+    </v-col>
+  </v-row>
 
             <v-text-field label="Category" v-model="post.category"  prepend-icon="mdi-view-list" :rules="rules">
             </v-text-field>
@@ -35,6 +52,7 @@ export default {
             category:"",
             content:"",
             image:"",
+            dates:[],
         },
         image:"",
         };  
@@ -49,6 +67,8 @@ export default {
             formData.append('title', this.post.title);
             formData.append('category', this.post.category);
             formData.append('content', this.post.content);
+            formData.append('dates', this.post.dates);
+
             if(this.$refs.form.validate()){// if form is validated send to database
                 const response = await API.addPost(formData);
                 this.$router.push({name: 'home' , params:{ message: response.message } });
