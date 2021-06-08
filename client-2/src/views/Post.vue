@@ -58,13 +58,15 @@
             class="pa-5"
             enctype="multipart/form-data"
           >
-          <p>{{ post }}</p>
-    <v-text-field   id="date" v-model="post.dates" color="white" readonly></v-text-field>
+          <v-text-field v-model="post.dates"></v-text-field>
+    <v-text-field   id="date" v-model="post.created" color="white" readonly></v-text-field>
     <v-text-field  class="readonly display-3" readonly id="title" v-model="post.title" color="white" style="border:none; max-height: auto;
 
 "></v-text-field>
 
     <v-textarea class="readonly" readonly id="para" v-model="post.content" color="white"  ></v-textarea>
+     <v-btn @click="formatDate" class="mt-3 btn" color="success" id=""             >try that date</v-btn
+            >
      <v-btn type="submit" class="mt-3 hidden btn" color="success" id="update_btn"
               >Save</v-btn
             >
@@ -98,6 +100,7 @@ export default {
   async created() {
     const response = await API.getPostById(this.$route.params.id);
     this.post = response;
+  
   },
   methods: {
     showOptions: function () {
@@ -156,6 +159,8 @@ console.log("this works too")
       formData.append("category", this.post.category);
       formData.append("content", this.post.content);
       formData.append("old_image", this.post.image);
+      formData.append("dates", this.post.dates);
+
       if (this.$refs.form.validate()) {
         // if form is validated send to database
         const response = await API.updatePost(this.$route.params.id, formData);
@@ -164,24 +169,20 @@ console.log("this works too")
           params: { message: response.message },
         });
       }
-    },
-    formatDate(date) {
-      if (!date) return null;
-
-      const [year, month, day] = date.split("-");
-      return `${month}/${day}/${year}`;
-    },
-    parseDate(date) {
-      if (!date) return null;
-
-      const [month, day, year] = date.split("/");
-      return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
+    }, formatDate(dates) {
+       dates = this.post.dates[0];
+      if (!dates) return null;
+      const bothDates = dates.split(",");
+      const [year, month, day] = bothDates[0].split("-");
+      const [year2, month2, day2] = bothDates[1].split("-");
+  console.log(`${month}/${day}/${year}`+"–"+`${month2}/${day2}/${year2} `)
+      return  `${month}/${day}/${year}`+"–"+`${month2}/${day2}/${year2} `;
     },
   },
   mounted() {
-    this.$nextTick(() => {
-      this.date = this.parseDate(this.post.created);
-    });
+    // this.$nextTick(() => {
+    //   this.date = this.parseDate(this.post.created);
+    // });
   },
 };
 </script>
@@ -256,7 +257,7 @@ p {
   position:absolute;
   top:3%;
   right:3%;
-  z-index:4
+  z-index:4;
 }
 #update_btn{
   position:absolute;

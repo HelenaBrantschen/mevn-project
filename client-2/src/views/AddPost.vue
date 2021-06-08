@@ -23,6 +23,8 @@
       sm="6"
     >
       model: {{ post.dates }}
+      <p>model: {{ post.dates }}</p>
+
     </v-col>
   </v-row>
 
@@ -52,7 +54,7 @@ export default {
             category:"",
             content:"",
             image:"",
-            dates:[],
+            dates: [],
         },
         image:"",
         };  
@@ -67,6 +69,7 @@ export default {
             formData.append('title', this.post.title);
             formData.append('category', this.post.category);
             formData.append('content', this.post.content);
+      
             formData.append('dates', this.post.dates);
 
             if(this.$refs.form.validate()){// if form is validated send to database
