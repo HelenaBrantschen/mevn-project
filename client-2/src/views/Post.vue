@@ -159,7 +159,6 @@ console.log("this works too")
       formData.append("category", this.post.category);
       formData.append("content", this.post.content);
       formData.append("old_image", this.post.image);
-      formData.append("dates", this.post.dates);
 
       if (this.$refs.form.validate()) {
         // if form is validated send to database
@@ -223,7 +222,7 @@ console.log("this works too")
   font-size: 26pt;
   text-transform: uppercase;
 }
-.v-text-field > .v-input__control > .v-input__slot:before {
+::v-deep .v-text-field > .v-input__control > .v-input__slot:before {
     border-color: inherit;
     border-style: none !important;
     }
