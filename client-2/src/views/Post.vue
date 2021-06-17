@@ -60,7 +60,7 @@
             enctype="multipart/form-data"
           >
           
-          <v-text-field id="date" class="readonly" readonly v-html="formatedDate"></v-text-field>
+          <v-text-field id="date" class="readonly" readonly  v-html="formatedDate"></v-text-field>
     <v-text-field  class="readonly display-3" readonly id="title" v-model="post.title" color="white" style="border:none; max-height: auto;
 
 "></v-text-field>
@@ -100,10 +100,8 @@ export default {
         content: "",
         image: "",
         dates:[],
-        // formatedDate:"",
       },
       image:"",
-      date: null,
     };
   },
   async created() {
@@ -130,12 +128,10 @@ const para = document. getElementById("para");
 //readonly.remove.classList("readonly");
 
 
-date.removeAttribute("readonly");
 title.removeAttribute("readonly");
 para.removeAttribute("readonly");
 
 
-date.remove.classList ="readonly";
 title.remove.classList="readonly";
 para.remove.classList="readonly";
 
@@ -161,7 +157,6 @@ selectFile(file) {
       this.image = file[0];
     },
      async updateForm() {// issues here
-console.log("this works too")
 
       const formData = new FormData();
       formData.append("image", this.image);
@@ -169,6 +164,8 @@ console.log("this works too")
       formData.append("category", this.post.category);
       formData.append("content", this.post.content);
       formData.append("old_image", this.post.image);
+      formData.append("dates", this.post.dates);
+
 
       if (this.$refs.form.validate()) {
         // if form is validated send to database
@@ -179,10 +176,12 @@ console.log("this works too")
         });
       }
     }, formatDate(dates) {
-       dates = this.post.dates[0];
-       console.log(dates, "is it a string?")
+       var dates = this.post.dates[0];
+       console.log( dates, "is it a string?")
       if (!dates) return null;
       if (typeof dates === 'string' ){
+        var isRange = dates.includes("-") 
+        console.log(isRange, "isRange?")
         if (dates.includes("-")){
           console.log("date range")
           const bothDates = dates.split(",");
