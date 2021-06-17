@@ -236,6 +236,9 @@ font-size: 18pt
         formData.append("title", this.post.title);
         formData.append("category", this.post.category);
         formData.append("content", this.post.content);
+        formData.append("dates", this.post.dates);
+        console.log(this.post.dates);
+
         if (this.$refs.form.validate()) {
           // if form is validated send to database
           const response = await API.addPost(formData);

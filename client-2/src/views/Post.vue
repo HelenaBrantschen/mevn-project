@@ -87,7 +87,8 @@ export default {
 
   computed:{
     formatedDate(){
-      return this.formatDate(this.dates)
+
+      return this.formatDate(this.dates);
     }
 
   },
@@ -119,6 +120,7 @@ export default {
     },
     enableEdit:function(){
 const date = document.getElementById("date");
+console.log(date,"datum")
 const title = document.getElementById("title");
 const para = document. getElementById("para");
 
@@ -178,12 +180,23 @@ console.log("this works too")
       }
     }, formatDate(dates) {
        dates = this.post.dates[0];
+       console.log(dates, "is it a string?")
       if (!dates) return null;
-      const bothDates = dates.split(",");
+      if (typeof dates === 'string' ){
+        if (dates.includes("-")){
+          console.log("date range")
+          const bothDates = dates.split(",");
       const [year, month, day] = bothDates[0].split("-");
       const [year2, month2, day2] = bothDates[1].split("-");
   console.log(`${month}/${day}/${year}`+"–"+`${month2}/${day2}/${year2} `)
       return  `${month}/${day}/${year}`+"–"+`${month2}/${day2}/${year2} `;
+        }
+        console.log("single date this");
+        return dates
+      }else{
+        console.log("not a string or no date")
+      }
+  
     },
   },
   mounted() {
