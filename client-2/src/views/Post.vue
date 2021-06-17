@@ -1,6 +1,7 @@
 <template>
 
   <div class="container pa-0">
+    
     <v-btn 
     id="edit_btn"
     class=""
@@ -58,15 +59,14 @@
             class="pa-5"
             enctype="multipart/form-data"
           >
-          <v-text-field v-model="post.dates"></v-text-field>
-    <v-text-field   id="date" v-model="post.created" color="white" readonly></v-text-field>
+          
+          <v-text-field id="date" class="readonly" readonly v-html="formatedDate"></v-text-field>
     <v-text-field  class="readonly display-3" readonly id="title" v-model="post.title" color="white" style="border:none; max-height: auto;
 
 "></v-text-field>
 
-    <v-textarea class="readonly" readonly id="para" v-model="post.content" color="white"  ></v-textarea>
-     <v-btn @click="formatDate" class="mt-3 btn" color="success" id=""             >try that date</v-btn
-            >
+    <v-textarea auto-grow class="readonly" readonly id="para" v-model="post.content" color="white"  ></v-textarea>
+    
      <v-btn type="submit" class="mt-3 hidden btn" color="success" id="update_btn"
               >Save</v-btn
             >
@@ -84,6 +84,13 @@
 <script>
 import API from "../api";
 export default {
+
+  computed:{
+    formatedDate(){
+      return this.formatDate(this.dates)
+    }
+
+  },
   data() {
     return {
       post: {
@@ -92,6 +99,7 @@ export default {
         content: "",
         image: "",
         dates:[],
+        // formatedDate:"",
       },
       image:"",
       date: null,
@@ -226,6 +234,7 @@ console.log("this works too")
     border-color: inherit;
     border-style: none !important;
     }
+
 p {
   padding-left: 20px;
   padding-right: 30px;

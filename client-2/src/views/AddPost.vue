@@ -22,8 +22,6 @@
       cols="12"
       sm="6"
     >
-      model: {{ post.dates }}
-      <p>model: {{ post.dates }}</p>
 
     </v-col>
   </v-row>
