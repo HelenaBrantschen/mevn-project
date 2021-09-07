@@ -4,7 +4,7 @@
 # mevn-project
 ## contains three parts:
 
-### A) first sketch of the slotmachine/gallery based on mevn-cli setup: 
+### A) first sketch of a mevn-cli setup with a slotmachine/gallery on the Index.vue page (open with live mode in VSC): 
 
 code inside client and server directory 
 
@@ -14,9 +14,6 @@ mevn serve
 ```
 -client (opens Index.vue)
 -server (DUMMY DATA BUT STILL EMPTY)
-
-### next steps: 
-create a better prototype of the navigation and UI similar to the sketch on figma. https://www.figma.com/file/0Q6ESHakKU2ZeNoiZwX9Lb/APP-Men4
 
 
 ## B) CRUD Commands: made from a tutorial, working app with crud commands, created design with the plugin vueify (css framework similar to bootstrap syntax).
@@ -29,7 +26,7 @@ npm start serve
 cd client-2 
 npm run serve
 ```
-### should be connected to a shared database, .
+### should be connected to a shared database.
 
 
 ## C) slotmachine
