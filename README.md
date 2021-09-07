@@ -29,15 +29,11 @@ npm start serve
 cd client-2 
 npm run serve
 ```
-### should be connected to an live database, sent you an invite per mail.
-### next steps: 
-try to adapt the app to my wishes, Should i stay with vueify or try to recreate without?
+### should be connected to a shared database, .
+
 
 ## C) slotmachine
 first sketch of moving posts, addapted slotmachine based on github project made with bootstrap. 
 ```bash
 cd slotmachine
 ```
-
-### next steps: 
-eliminate error in the displayed posts try to simplify code and delete the unnecessary parts, if to complicated delete and start from scratch.
