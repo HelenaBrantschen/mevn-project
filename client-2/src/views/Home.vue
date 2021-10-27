@@ -9,11 +9,11 @@
 
     <v-main top="0" :key="iterator">
       <!-- Main-->
-      <v-row>
-        <v-col class="pa-0" v-for="post in posts" :key="post._id">
-          <v-card tile width="50vw" height="50vw" style="overflow:hidden;" class=""
+      <v-row >
+        <v-col class="pa-0 col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="post in posts" :key="post._id">
+          <v-card tile width="50vw" style="overflow:hidden;" class=""
             :to="{ name: 'post', params: { id: post._id } }">
-            <v-img class="gallery-img" height="100%" :src="`/${post.image}`"></v-img>
+            <v-img  :aspect-ratio="1/1" class="gallery-img" :src="`/${post.image}`"></v-img>
             <div class="gallery-post-wrapper">
               <v-btn class="ml-4 mt-3" small outlined color="white">
                 {{ post.category }}
