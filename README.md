@@ -3,8 +3,6 @@
 
 # mevn-project minimized
 
-
-
 ##  CRUD Commands: made from a tutorial, working app with crud commands, created design with the plugin vueify (css framework similar to bootstrap syntax).
 split terminal
 
@@ -15,4 +13,3 @@ npm start serve
 cd client-2 
 npm run serve
 ```
-
