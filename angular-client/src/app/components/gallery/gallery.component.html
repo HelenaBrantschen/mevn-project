@@ -1,0 +1,4 @@
+<p>gallery works!</p>
+<ul>
+    <li *ngFor="let post of posts$ | async">{{ post }}<img [src]="'http://localhost:5000/' + post.image"/></li>
+</ul>

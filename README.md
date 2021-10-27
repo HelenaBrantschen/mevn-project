@@ -12,4 +12,7 @@ npm start serve
 
 cd client-2 
 npm run serve
+
+cd angular-client
+npm run start
 ```
