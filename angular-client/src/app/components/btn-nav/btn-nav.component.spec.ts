@@ -8,7 +8,8 @@ describe('BtnNavComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BtnNavComponent ]
+      declarations: [ BtnNavComponent ],
+      imports: []
     })
     .compileComponents();
   });
