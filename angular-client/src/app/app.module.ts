@@ -14,7 +14,8 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 
 @NgModule({
     declarations: [
@@ -24,8 +25,6 @@ import { FormsModule } from '@angular/forms';
         MapComponent,
         BtnNavComponent,
         OverlayComponent,
-        
-
     ],
     imports: [
         BrowserModule,
@@ -37,6 +36,7 @@ import { FormsModule } from '@angular/forms';
         MatFormFieldModule,
         FormsModule,
         MatInputModule,
+        ReactiveFormsModule
         
     ],
     providers: [
