@@ -1,11 +1,11 @@
 import { OverlayComponent } from './components/overlay/overlay.component';
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
-import {GalleryComponent} from "./components/gallery/gallery.component";
-import {HttpClientModule} from "@angular/common/http";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+ 
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { GalleryComponent } from "./components/gallery/gallery.component";
+import { HttpClientModule } from "@angular/common/http";
 import { RoundbtnComponent } from './components/roundbtn/roundbtn.component';
 import { MapComponent } from './components/map/map.component';
 import { BtnNavComponent } from './components/btn-nav/btn-nav.component';
@@ -14,7 +14,11 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 
 @NgModule({
@@ -36,7 +40,13 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
         MatFormFieldModule,
         FormsModule,
         MatInputModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatSelectModule,
+        MatNativeDateModule,
+        MatDatepickerModule,
+        
+        
+        
         
     ],
     providers: [
