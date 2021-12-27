@@ -1,19 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { GalleryComponent } from './gallery.component';
 
-describe('GalleryComponent', () => {
-  let component: GalleryComponent;
-  let fixture: ComponentFixture<GalleryComponent>;
+import { BtnNavComponent } from './btn-nav.component';
+
+describe('BtnNavComponent', () => {
+  let component: BtnNavComponent;
+  let fixture: ComponentFixture<BtnNavComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GalleryComponent ]
+      declarations: [ BtnNavComponent ],
+      imports: []
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GalleryComponent);
+    fixture = TestBed.createComponent(BtnNavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

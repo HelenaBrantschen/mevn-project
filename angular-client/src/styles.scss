@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    font-family: 'Montserrat' !important;
+}
+
+body{
+    margin:0;
+
+}
+
+//created a class in the roundedbutton
+.custom-dialog{
+    min-width: 100vw;
+    width:100vw;
+    height:65vh;
+
+   
+
+    .mat-dialog-container{
+        background-color: #C4CDE9;
+        position: absolute;
+        border-radius: 33px 33px 0 0 ;
+        padding-top: 57px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 100px;
+        height:auto;
+        bottom:0;
+        .mat-dialog-title{
+            margin-bottom:40px;
+        }
+        .mat-dialog-content{    padding-left: 0px;
+        padding-right: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+        width: 100%;
+        .mat-form-field{
+            display: initial;
+        }
+    }
+
+    }
+}

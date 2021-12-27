@@ -8,7 +8,8 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  loadPosts() {
-    return this.http.get("/api/post");
+  async loadPosts() {
+    var test = await this.http.get("http://localhost:5000/api/post");
+    return test
   }
 }

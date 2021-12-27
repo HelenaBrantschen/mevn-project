@@ -11,10 +11,12 @@ export class GalleryComponent implements OnInit {
 
   posts$: Observable<any> | undefined;
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService,) { }
 
-  ngOnInit(): void {
-    this.posts$ = this.httpService.loadPosts();
+  async ngOnInit(): Promise<void> {
+    this.posts$ = await this.httpService.loadPosts();
+    this.posts$.subscribe(value => console.log(value))
   }
 
 }
+
