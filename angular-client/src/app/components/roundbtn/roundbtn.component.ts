@@ -17,7 +17,6 @@ export class RoundbtnComponent {
   public openDialog(): void {
     const dialogRef = this.dialog.open(OverlayComponent, {
       panelClass: 'custom-dialog',
-      width:'250px',
     });
   
     dialogRef.afterClosed().subscribe(result => {
