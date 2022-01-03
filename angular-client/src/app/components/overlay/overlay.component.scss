@@ -10,11 +10,11 @@ letter-spacing: -0.02em;
 color: #FFFFFF;
 }
 #upload-image{
-  border: 0.2px solid white;
+  border: 0.9px solid white;
   border-radius: 5px;
-  opacity: 0.5;
-  height: 45px;
-  padding: 0 .75em 0 .75em;
+  opacity: 1;
+  height: 54px;
+  padding: 14px .75em 14px .75em;
 }
 
 .button-wrapper{
@@ -30,6 +30,9 @@ bottom:0;
 }
 @media (min-width: theme('screens.lg')){
   height:4.5vw;
+}
+.mat-placeholder-required .mat-form-field-required-marker {
+  color:white;
 }
 .custom-ok-button{
   padding: 15px;
@@ -70,7 +73,18 @@ overflow: hidden;
 .icon-x{
   display: inline-flex;
 }
+.icon-wrap{
+  float: right;
+}
 
-.mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
-  color: #000ac6;
+#upload-image{
+
+  margin-bottom: 1.34375em;
+
+  input{
+    display: none;
+  }
+  label{
+    opacity: 0.5;
+  }
 }
