@@ -1,4 +1,6 @@
-
+.dialog-top-container{
+  height: 100%;
+}
 h2#mat-dialog-title{
 font-family: 'Montserrat' !important;
 font-weight: 100;
@@ -15,6 +17,14 @@ color: #FFFFFF;
   opacity: 1;
   height: 54px;
   padding: 14px .75em 14px .75em;
+  margin-bottom: 1.34375em;
+  input{
+    display: none;
+  }
+  label{
+    opacity: 0.5;
+  }
+
 }
 
 .button-wrapper{
@@ -27,6 +37,7 @@ bottom:0;
   display: flex;
   align-self: flex-end;
   @media (min-width: theme('screens.md')){
+    height: 22.6vw;
 }
 @media (min-width: theme('screens.lg')){
   height:4.5vw;
@@ -69,22 +80,21 @@ overflow: hidden;
 }
 
 
-}   
+}  
+.icon-wrap{
+  float: right;
+} 
 .icon-x{
   display: inline-flex;
 }
-.icon-wrap{
-  float: right;
-}
 
-#upload-image{
 
-  margin-bottom: 1.34375em;
-
-  input{
-    display: none;
+#note-textarea{
+  @media(min-width: theme('screens.md')){
+    height: 15vh; //5vh for ipad pro
+    
   }
-  label{
-    opacity: 0.5;
+  @media(min-width: theme('screens.lg')){
+    height: 25vh;
   }
 }

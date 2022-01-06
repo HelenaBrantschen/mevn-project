@@ -1,4 +1,5 @@
- <h2 mat-dialog-title>Create a new album</h2>
+ <div class="dialog-top-container">
+   <h2 mat-dialog-title>Create a new album</h2>
 <div mat-dialog-content>
 <div class="inputfield" id="title">
     <mat-form-field class="example-full-width" appearance="outline">
@@ -21,7 +22,8 @@
     <mat-optgroup *ngFor="let group of categoryGroups" [label]="group.name"
                   [disabled]="group.disabled">
       <mat-option *ngFor="let element of group.element" [value]="element.value">
-        {{element.viewValue}}
+        <span class="material-icons">{{element.icon}}</span>{{element.viewValue}}
+        
       </mat-option>
     </mat-optgroup>
   </mat-select>
@@ -46,7 +48,7 @@
 <div class="textareafield" id="notes">
   <mat-form-field appearance="outline">
     <mat-label>Note</mat-label>
-    <textarea matInput [formControl]="notesFormControl" placeholder="We did...I loved ..."></textarea>
+    <textarea id="note-textarea" matInput [formControl]="notesFormControl" placeholder="We did...I loved ..."></textarea>
     <mat-error *ngIf="notesFormControl.hasError('text') && !notesFormControl.hasError('required')">
     </mat-error>
     <mat-error *ngIf="notesFormControl.hasError('required')">
@@ -68,5 +70,6 @@
   <button class="custom-ok-button" cdkFocusInitial>Save album</button>
   <div class="btn-no-wrapper">
   <button class="custom-no-button" (click)="onNoClick()"><img class="icon-x " src="../../../assets/icon-x.svg"></button>
+</div>
 </div>
 </div>

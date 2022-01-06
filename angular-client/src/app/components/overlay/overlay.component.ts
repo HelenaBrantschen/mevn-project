@@ -6,12 +6,14 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 interface Element {
   value: string;
   viewValue: string;
+  icon: any;
 }
 
 interface CategoryGroup {
   disabled?: boolean;
   name: string;
   element: Element[];
+  
 }
 
 
@@ -33,37 +35,41 @@ export class OverlayComponent {
   categoryControl = new FormControl();
   categoryGroups: CategoryGroup[] = [
     {
-      name: 'Grass',
+      name: 'Trip',
       element: [
-        {value: 'bulbasaur-0', viewValue: 'Bulbasaur'},
-        {value: 'oddish-1', viewValue: 'Oddish'},
-        {value: 'bellsprout-2', viewValue: 'Bellsprout'},
+        
+
+{value: 'look-0', icon: 'add', viewValue: 'Look around'},
+{value: 'promenade-1', icon: 'add',viewValue: 'Promenade'},
+{value: 'visit-2', icon: 'add',viewValue: 'Visit'},
+{value: 'daycation-3', icon: 'add', viewValue: 'daycation'},
+{value: 'city-4', icon: 'add',viewValue: 'City Trip'},
+{value: 'sightseeing-5', icon: 'add', viewValue: 'Sightseeing Tour'},
       ],
     },
     {
-      name: 'Water',
+      name: 'Vacation & Travel',
       element: [
-        {value: 'squirtle-3', viewValue: 'Squirtle'},
-        {value: 'psyduck-4', viewValue: 'Psyduck'},
-        {value: 'horsea-5', viewValue: 'Horsea'},
+        {value: 'vacation-1', icon: 'add', viewValue: 'Vacation'},
+        {value: 'boat-2', icon: 'add', viewValue: 'Boat Tour'},
+        {value: 'bike-3',icon: 'add', viewValue: 'Bike Tour'},
+        {value: 'road-3',icon: 'add', viewValue: 'Road Trip'},
+        {value: 'backpack-4',icon: 'add', viewValue: 'Backpacking'},
+
       ],
     },
     {
-      name: 'Fire',
+      name: 'Specific',
       disabled: false,
       element: [
-        {value: 'charmander-6', viewValue: 'Charmander'},
-        {value: 'vulpix-7', viewValue: 'Vulpix'},
-        {value: 'flareon-8', viewValue: 'Flareon'},
+        {value: 'business-0', icon: 'add', viewValue: 'Business Trip'},
+        {value: 'spa-1', icon: 'add', viewValue: 'Spa & Rest'},
+        {value: 'road-2', icon: 'add', viewValue: 'Adventure Holidays'},
+        {value: 'sport-3', icon: 'add', viewValue: 'Sport Holidays'},
+        {value: 'else-4', icon: 'add', viewValue: 'Else'},
+
       ],
-    },
-    {
-      name: 'Psychic',
-      element: [
-        {value: 'mew-9', viewValue: 'Mew'},
-        {value: 'mewtwo-10', viewValue: 'Mewtwo'},
-      ],
-    },
+    }
   ];
 
 
