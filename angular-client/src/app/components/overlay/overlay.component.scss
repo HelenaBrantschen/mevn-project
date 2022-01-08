@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
 .dialog-top-container{
   height: 100%;
 }
@@ -25,6 +27,10 @@ color: #FFFFFF;
     opacity: 0.5;
   }
 
+}
+.cat-text{
+  padding-left: 15px;
+    font-size: larger;
 }
 
 .button-wrapper{
@@ -97,4 +103,8 @@ overflow: hidden;
   @media(min-width: theme('screens.lg')){
     height: 25vh;
   }
+}
+
+::ng-deep .mat-calendar-body-in-range::before{
+  background-color: red!important;
 }

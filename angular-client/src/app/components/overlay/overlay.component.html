@@ -22,8 +22,7 @@
     <mat-optgroup *ngFor="let group of categoryGroups" [label]="group.name"
                   [disabled]="group.disabled">
       <mat-option *ngFor="let element of group.element" [value]="element.value">
-        <span class="material-icons">{{element.icon}}</span>{{element.viewValue}}
-        
+        <span class="material-icons ">{{element.icon}}</span><span class="cat-text" >{{element.viewValue}} </span>
       </mat-option>
     </mat-optgroup>
   </mat-select>
@@ -57,7 +56,7 @@
   </mat-form-field>
 </div>
 <div id="upload-image">
-  <input class="ng-hide" id="input-file-id" multiple type="file" />
+  <input class="ng-hide" id="input-file-id" type="file" (change)="handleFileInput($event)"/>
   <label for="input-file-id" class="md-button md-raised md-primary">Choose Files</label>
   <div class="icon-wrap">
     <svg width="22" height="22" viewBox="0 0 26 26" style="padding: 2px;
@@ -67,7 +66,7 @@
 
 </div>
 <div class="button-wrapper">
-  <button class="custom-ok-button" cdkFocusInitial>Save album</button>
+  <button class="custom-ok-button" (click)="saveAlbum()" cdkFocusInitial>Save album</button>
   <div class="btn-no-wrapper">
   <button class="custom-no-button" (click)="onNoClick()"><img class="icon-x " src="../../../assets/icon-x.svg"></button>
 </div>

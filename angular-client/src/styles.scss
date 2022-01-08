@@ -6,7 +6,7 @@
 
 /* You can add global styles to this file, and also import other style files */
 * {
-  font-family: 'Montserrat' !important;
+  font-family: 'Montserrat' ;
 }
 
 body {
@@ -175,3 +175,5 @@ color:white;
 .mat-optgroup-label{
   color:black;
 }
+
+.mat-calendar-body-in-range::before{}
