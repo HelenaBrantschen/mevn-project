@@ -1,3 +1,4 @@
+import { PostComponent } from './components/post/post.component';
 import { OverlayComponent } from './components/overlay/overlay.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,7 +20,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
-
+import { RoundbtnExpandComponent } from './components/roundbtn-expand/roundbtn-expand.component';
 
 
 @NgModule({
@@ -30,6 +31,8 @@ import { MatIconModule } from '@angular/material/icon';
         MapComponent,
         BtnNavComponent,
         OverlayComponent,
+        RoundbtnExpandComponent,
+        PostComponent
     ],
     imports: [
         BrowserModule,
@@ -54,6 +57,7 @@ import { MatIconModule } from '@angular/material/icon';
     providers: [
         {
           provide: MatDialogRef,
+          
           useValue: {}
         },
      ],
