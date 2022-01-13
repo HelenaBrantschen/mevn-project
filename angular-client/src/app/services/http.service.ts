@@ -13,11 +13,8 @@ export class HttpService {
   async loadPosts() {
     var test = await this.http.get("http://localhost:5000/api/post");
     return test
-  }/*
-  async loadPostbyID( post.id) {
-    var test = this.router.get('http://localhost:5000/api/post/'{post.id})
-    return test
-  }*/
+  }
+  
   savePost(formData: FormData) {
     var post = this.http.post("http://localhost:5000/api/post", formData).subscribe();
     return post

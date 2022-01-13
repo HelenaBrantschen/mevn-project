@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { AppComponent } from './../../app.component';
+import { Observable } from 'rxjs';
+import { PostService } from './../../services/post.service';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-post',
@@ -7,14 +10,31 @@ import { Component } from '@angular/core';
 })
 export class PostComponent {
 
-      
-  savePost(){
-      
-  }
+  @Input() id:any  
+  constructor( 
+    private service : PostService,
+    private appComponent : AppComponent
+
+    ){}
+  public post: any;
+
+  async ngOnInit(): Promise<void> {
+    console.log(this.id)
+     var post$ = await this.service.loadPostContent(this.id);
+     post$.subscribe(data => {
+      console.log(data, "postcontent") 
+      this.post = data;
+    })}  
     
+  public onClickIconGallery(){
+    this.appComponent.showGallery();
+    
+  }
+
+  savePost(){
   
-}  
-  
+  };
+}
 
 /*import API from "../api";
 export default {

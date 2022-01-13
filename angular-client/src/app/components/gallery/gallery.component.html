@@ -5,7 +5,7 @@
           <!--  <img class="gallery_image" [src]="'http://localhost:8080/' + post.image"/> -->
             <img class="gallery_image" [src]="'http://localhost:5000/' +  post.image"/>
         </div>
-        <div class="hoverbg-wrapper tw-w-full tw-h-full tw-aspect-square">
+        <div class="hoverbg-wrapper tw-w-full tw-h-full tw-aspect-square" (click)="onClickPost(post)">
             <p class="gallery_title">{{ post.title }}</p>
         </div>
     </div>
