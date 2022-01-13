@@ -9,10 +9,6 @@ export class RoundbtnExpandComponent {
 
   constructor() { }
 
-  public expandOptions():void {
-    console.log('The Options are expanded');
-
-  }
 
 }
 
