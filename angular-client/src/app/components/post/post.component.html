@@ -1,11 +1,11 @@
   <div class="post-container">
   <section class="obligatory">
   <div class="header">
-    <div class="btn-nav tw-w-1/4 md:tw-w-1/6 lg:tw-w-1/12 tw-aspect-square">
-      <img class="" src="../assets/icon_gallery.png" >
+    <div class="btn-nav tw-w-1/4 md:tw-w-1/6 lg:tw-w-1/12 tw-aspect-square" (click)="onClickIconGallery()" >
+      <img class="" src="../../../assets/icon_gallery.png">
     </div>
       <div class="wrapper">
-      <p class="category"><strong>Category</strong></p>   
+      <p class="category"><strong>{{ post.category }}</strong></p>   
       <p class="mode">Edit-Mode</p>   
     </div>
     <div class="save-section" (click)="savePost()" >
@@ -17,17 +17,17 @@
     </div>
 </div>
   <div class="image-container"> 
-    <img class="header-image" src="">
+    <img class="header-image" [src]="'http://localhost:5000/' +  post.image">
     <div class="datum-cutout">
-      <p class="datum"> Datum</p>
+      <p class="datum"> {{ post.dates }} </p>
 
     </div>
   </div>
   <div class="content">
-    <p class="title">Ein Abend 
+    <p class="title">{{ post.title }}
       <strong>im Saal</strong>
     </p>
-    <p class="notes">hhdskfshdhdfhhdfhkdfhkhfhkdfhkfdhfdhdhf</p>
+    <p class="notes">{{ post.content }}</p>
   </div>
 
   <app-roundbtn-expand></app-roundbtn-expand>
