@@ -17,12 +17,15 @@
 <div class="dropdown" id="category">
 <mat-form-field appearance="outline">
   <mat-label>Category</mat-label>
-  <mat-select [formControl]="categoryControl">
-    <mat-option>-- Choose --</mat-option>
+  <mat-select [formControl]="categoryControl" [(ngModel)]="selectedOption">
+    <mat-select-trigger>
+      <span class="material-icons">{{ selectedOption.icon}}</span><span class="cat-text" >{{selectedOption.viewValue}} </span>
+    </mat-select-trigger>
+    <mat-option >-- Choose --</mat-option>
     <mat-optgroup *ngFor="let group of categoryGroups" [label]="group.name"
-                  [disabled]="group.disabled">
-      <mat-option *ngFor="let element of group.element" [value]="element.value">
-        <span class="material-icons ">{{element.icon}}</span><span class="cat-text" >{{element.viewValue}} </span>
+                  [disabled]="group.disabled" >
+      <mat-option *ngFor="let element of group.element" [value]="element" >
+        <span class="material-icons">{{element.icon}}</span><span class="cat-text" >{{element.viewValue}} </span>
       </mat-option>
     </mat-optgroup>
   </mat-select>

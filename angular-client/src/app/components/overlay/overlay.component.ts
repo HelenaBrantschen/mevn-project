@@ -21,6 +21,7 @@ interface CategoryGroup {
   disabled?: boolean;
   name: string;
   element: Element[];
+
   
 }
 
@@ -32,6 +33,8 @@ interface CategoryGroup {
 })
 
 export class OverlayComponent {
+
+  selectedOption:any = "---Choose---"
   textFormControl = new FormControl('', [Validators.required]);
   titleFormControl = new FormControl('', [Validators.required]);
   notesFormControl = new FormControl('', [Validators.required ]);
@@ -43,15 +46,15 @@ export class OverlayComponent {
   });
 
 
-
   categoryControl = new FormControl();
+  
   categoryGroups: CategoryGroup[] = [
     {
       name: 'Trip',
       element: [
-        {value: 'promenade-1', icon: 'nature_people',viewValue: 'Promenade'},
-        {value: 'visit-2', icon: 'account_balance',viewValue: 'Visit'},
-        {value: 'visit-2', icon: 'people',viewValue: 'Visit'},
+        {value: 'promenade-1', icon: 'nature_people', viewValue: 'Promenade'},
+        {value: 'visit-2', icon: 'account_balance', viewValue: 'Visit'},
+        {value: 'visit-2', icon: 'people', viewValue: 'Visit'},
         {value: 'daycation-3', icon: 'today', viewValue: 'daycation'},
         {value: 'city-4', icon: 'location_city',viewValue: 'City Trip'},
         {value: 'sightseeing-5', icon: 'insights', viewValue: 'Sightseeing Tour'},
@@ -66,7 +69,6 @@ export class OverlayComponent {
         {value: 'bike-3',icon: 'directions_bike', viewValue: 'Bike Tour'},
         {value: 'road-3',icon: 'drive_eta', viewValue: 'Road Trip'},
         {value: 'backpack-4', icon: 'travel_explore', viewValue: 'Backpacking'},
-
       ],
     },
     {
@@ -104,17 +106,13 @@ export class OverlayComponent {
     const formData = new FormData();
     formData.append('image', this.fileToUpload);
     formData.append('title', this.titleFormControl.value);
-    formData.append('category', this.categoryControl.value);
+    formData.append('category', JSON.stringify(this.categoryControl.value));
+
     formData.append('content', this.notesFormControl.value);
     let datesFormatted = this.range.value["start"] +" - " + this.range.value["end"] 
-    //let dateFormatted2 = moment().format(this.range.value )
 
    formData.append('dates',datesFormatted ) ;
-   console.log("datum1", typeof(this.range.value));
-   console.log("datum2", this.range.value)
-
-   console.log("datum3", this.range.value['start'])
-   console.log("datum4", this.range.value['end'])
+   
 
 
     

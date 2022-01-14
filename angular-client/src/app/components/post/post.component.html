@@ -5,7 +5,7 @@
       <img class="" src="../../../assets/icon_gallery.png">
     </div>
       <div class="wrapper">
-      <p class="category"><strong>{{ post.category }}</strong></p>   
+      <p class="category"><strong>{{ post.category.viewValue }}</strong></p>   
       <p class="mode">Edit-Mode</p>   
     </div>
     <div class="save-section" (click)="savePost()" >
@@ -20,7 +20,6 @@
     <img class="header-image" [src]="'http://localhost:5000/' +  post.image">
     <div class="datum-cutout">
       <p class="datum"> {{ post.dates[0] | date:"shortDate" }} – {{ post.dates[1] | date:"shortDate" }}</p>
-
     </div>
   </div>
   <div class="content">
