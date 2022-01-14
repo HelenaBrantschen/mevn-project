@@ -20,9 +20,9 @@ export class AppComponent implements OnInit {
   ) {}
 
   async ngOnInit(): Promise<void> {
-    this.galleryService
-      .showExistingPost$
-      .subscribe((id) => this.showExistingPost(id));
+    //this.galleryService
+      //.showExistingPost$
+      //.subscribe((id) => this.showExistingPost(id));
   }
 
   /*ngOnDestroy() {
@@ -31,17 +31,17 @@ export class AppComponent implements OnInit {
   };*/
 
   showExistingPost(id: any) {
-    this.showgallery = false;
+    /*this.showgallery = false;
     this.shownav = false;
     this.showpost = true;
     this.postId = id;
-    console.log("ID", this.postId)
+    console.log("ID", this.postId)*/
   }
     
   showGallery(){
-    this.showgallery = true;
+   /* this.showgallery = true;
     this.shownav = true;
-    this.showpost = false;
+    this.showpost = false;*/
   }
 
 }

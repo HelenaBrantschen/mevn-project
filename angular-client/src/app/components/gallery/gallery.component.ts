@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpService} from "../../services/http.service";
 import { GalleryComponentService } from 'src/app/services/gallery.component.service';
-
+import { Router } from '@angular/router'; 
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
@@ -14,7 +14,8 @@ export class GalleryComponent implements OnInit {
 
   constructor(
     private httpService: HttpService,
-    private service: GalleryComponentService
+    private service: GalleryComponentService,
+    private router: Router
     ) { }
 
   async ngOnInit(): Promise<void> {
@@ -23,7 +24,8 @@ export class GalleryComponent implements OnInit {
   }
   public onClickPost(id: any) {
     console.log(id, "POST")
-    this.service.onClickPost(id._id);
+   // this.service.onClickPost(id._id);
+    this.router.navigate(["/post", id])
   }
 }
 

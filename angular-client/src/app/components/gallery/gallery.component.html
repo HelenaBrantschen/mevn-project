@@ -1,3 +1,4 @@
+<btn-nav></btn-nav>
 <section class="container tw-grid tw-grid-cols-2 md:tw-grid-cols-4 lg:tw-grid-cols-5 ">
     <div *ngFor="let post of posts$ | async" class="postsquare  ">
         <div class="wrapper tw-grid tw-aspect-square">
@@ -5,7 +6,7 @@
           <!--  <img class="gallery_image" [src]="'http://localhost:8080/' + post.image"/> -->
             <img class="gallery_image" [src]="'http://localhost:5000/' +  post.image"/>
         </div>
-        <div class="hoverbg-wrapper tw-w-full tw-h-full tw-aspect-square" (click)="onClickPost(post)">
+        <div class="hoverbg-wrapper tw-w-full tw-h-full tw-aspect-square" (click)="onClickPost(post._id)">
             <p class="gallery_title">{{ post.title }}</p>
         </div>
     </div>
