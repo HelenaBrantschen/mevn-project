@@ -24,27 +24,11 @@ interface CategoryGroup {
   
 }
 
-export const MY_FORMATS = {
-  parse: {
-    dateInput: 'LL',
-  },
-  display: {
-    dateInput: 'YYYY-MM-DD',
-    monthYearLabel: 'YYYY',
-    dateA11yLabel: 'LL',
-    monthYearA11yLabel: 'YYYY',
-  },
-};
 
 @Component({
   selector: 'app-overlay',
   templateUrl: './overlay.component.html',
   styleUrls: ['./overlay.component.scss'],
-  
-  providers: [{
-   provide: DateAdapter, 
-    useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
-     {provide: MAT_DATE_FORMATS, useValue: MY_FORMATS},]
 })
 
 export class OverlayComponent {
@@ -54,8 +38,8 @@ export class OverlayComponent {
   
 
   range = new FormGroup({
-    start: new FormControl(moment().format(" ddd DD MM YYYY")),
-    end: new FormControl(moment()),
+    start: new FormControl(),
+    end: new FormControl(),
   });
 
 

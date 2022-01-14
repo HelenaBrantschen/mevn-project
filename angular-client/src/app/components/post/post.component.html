@@ -1,4 +1,4 @@
-  <div class="post-container">
+  <div *ngIf="post" class="post-container">
   <section class="obligatory">
   <div class="header">
     <div class="btn-nav tw-w-1/4 md:tw-w-1/6 lg:tw-w-1/12 tw-aspect-square" (click)="onClickIconGallery()" >
@@ -19,7 +19,7 @@
   <div class="image-container"> 
     <img class="header-image" [src]="'http://localhost:5000/' +  post.image">
     <div class="datum-cutout">
-      <p class="datum"> {{ post.dates }} </p>
+      <p class="datum"> {{ post.dates[0] | date:"shortDate" }} – {{ post.dates[1] | date:"shortDate" }}</p>
 
     </div>
   </div>

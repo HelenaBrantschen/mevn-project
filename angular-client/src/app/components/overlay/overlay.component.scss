@@ -108,3 +108,7 @@ overflow: hidden;
 ::ng-deep .mat-calendar-body-in-range::before{
   background-color: #BFC9E8!important;
 }
+
+::ng-deep  div.mat-calendar-body-cell-content.mat-focus-indicator.mat-calendar-body-today{
+  background-color: none;
+}

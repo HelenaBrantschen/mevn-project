@@ -1,6 +1,6 @@
 import { PostComponent } from './components/post/post.component';
 import { OverlayComponent } from './components/overlay/overlay.component';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
  
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +21,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RoundbtnExpandComponent } from './components/roundbtn-expand/roundbtn-expand.component';
+import localeCH from '@angular/common/locales/de-CH';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeCH);
+
 
 
 @NgModule({
@@ -57,9 +61,11 @@ import { RoundbtnExpandComponent } from './components/roundbtn-expand/roundbtn-e
     providers: [
         {
           provide: MatDialogRef,
-          
+
+        
           useValue: {}
-        },
+        },{provide: LOCALE_ID, useValue: 'de-CH' },
+        
      ],
     bootstrap: [AppComponent]
 })

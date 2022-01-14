@@ -38,6 +38,7 @@ input {position: absolute; display: none}
 input#toggle:checked ~ #show-options .big-btn {
   background: white;
 }
+
 input#toggle:checked ~ #show-options .big-btn .closeBtn{
   color: #444343;
 }
@@ -49,10 +50,12 @@ input#toggle:checked ~ #show-options .btn .btn-small{
   background: #F3F6FF;
 }
 
+
 .material-icons.md-36 { 
   font-size: 33px; 
   color: #444343; }
 
+  //center icon
 .btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -111,4 +114,11 @@ input#toggle:checked ~ #show-options .btn .closeBtn {
   opacity: 1;
 }
 
-
+//hover
+.btn-small:hover, .btn-small:focus{
+  background-color: #BFC9E8;
+  .material-icons.md-36:hover, .material-icons.md-36:focus {
+    color:white;
+  }
+  
+}

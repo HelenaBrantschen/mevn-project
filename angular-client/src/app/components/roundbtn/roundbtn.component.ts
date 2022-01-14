@@ -1,4 +1,3 @@
-import { FlexibleConnectedPositionStrategy } from '@angular/cdk/overlay';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { OverlayComponent } from '../overlay/overlay.component';
