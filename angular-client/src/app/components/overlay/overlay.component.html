@@ -1,4 +1,5 @@
- <h2 mat-dialog-title>Create a new album</h2>
+ <div class="dialog-top-container">
+   <h2 mat-dialog-title>Create a new album</h2>
 <div mat-dialog-content>
 <div class="inputfield" id="title">
     <mat-form-field class="example-full-width" appearance="outline">
@@ -16,12 +17,15 @@
 <div class="dropdown" id="category">
 <mat-form-field appearance="outline">
   <mat-label>Category</mat-label>
-  <mat-select [formControl]="categoryControl">
-    <mat-option>-- Choose --</mat-option>
+  <mat-select [formControl]="categoryControl" [(ngModel)]="selectedOption">
+    <mat-select-trigger>
+      <span class="material-icons">{{ selectedOption.icon}}</span><span class="cat-text" >{{selectedOption.viewValue}} </span>
+    </mat-select-trigger>
+    <mat-option >-- Choose --</mat-option>
     <mat-optgroup *ngFor="let group of categoryGroups" [label]="group.name"
-                  [disabled]="group.disabled">
-      <mat-option *ngFor="let element of group.element" [value]="element.value">
-        {{element.viewValue}}
+                  [disabled]="group.disabled" >
+      <mat-option *ngFor="let element of group.element" [value]="element" >
+        <span class="material-icons">{{element.icon}}</span><span class="cat-text" >{{element.viewValue}} </span>
       </mat-option>
     </mat-optgroup>
   </mat-select>
@@ -29,14 +33,14 @@
 </div>
 
 <div id="datepicker">
-  <mat-form-field appearance="outline">
+  <mat-form-field appearance="outline" >
     <mat-label>from - to</mat-label>
     <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
       <input matStartDate formControlName="start" placeholder="Start date">
       <input matEndDate formControlName="end" placeholder="End date">
     </mat-date-range-input>
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-date-range-picker #picker></mat-date-range-picker>
+    <mat-date-range-picker  #picker></mat-date-range-picker>
   
     <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
     <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
@@ -46,7 +50,7 @@
 <div class="textareafield" id="notes">
   <mat-form-field appearance="outline">
     <mat-label>Note</mat-label>
-    <textarea matInput [formControl]="notesFormControl" placeholder="We did...I loved ..."></textarea>
+    <textarea id="note-textarea" matInput [formControl]="notesFormControl" placeholder="We did...I loved ..."></textarea>
     <mat-error *ngIf="notesFormControl.hasError('text') && !notesFormControl.hasError('required')">
     </mat-error>
     <mat-error *ngIf="notesFormControl.hasError('required')">
@@ -55,14 +59,19 @@
   </mat-form-field>
 </div>
 <div id="upload-image">
-  <input class="ng-hide" id="input-file-id" multiple type="file" />
+  <input class="ng-hide" id="input-file-id" type="file" (change)="handleFileInput($event)"/>
   <label for="input-file-id" class="md-button md-raised md-primary">Choose Files</label>
-</div> 
+  <div class="icon-wrap">
+    <svg width="22" height="22" viewBox="0 0 26 26" style="padding: 2px;
+    margin-right: 5px;" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15.3296 19.3049H11.4233C10.7739 19.3049 10.2515 18.7825 10.2515 18.1331V9.92993H5.96924C5.1001 9.92993 4.66553 8.88013 5.28076 8.26489L12.7075 0.833252C13.0737 0.467041 13.6743 0.467041 14.0405 0.833252L21.4722 8.26489C22.0874 8.88013 21.6528 9.92993 20.7837 9.92993H16.5015V18.1331C16.5015 18.7825 15.979 19.3049 15.3296 19.3049ZM25.8765 18.9143V24.3831C25.8765 25.0325 25.354 25.5549 24.7046 25.5549H2.04834C1.39893 25.5549 0.876465 25.0325 0.876465 24.3831V18.9143C0.876465 18.2649 1.39893 17.7424 2.04834 17.7424H8.68896V18.1331C8.68896 19.6418 9.91455 20.8674 11.4233 20.8674H15.3296C16.8384 20.8674 18.064 19.6418 18.064 18.1331V17.7424H24.7046C25.354 17.7424 25.8765 18.2649 25.8765 18.9143ZM19.8218 23.2112C19.8218 22.6741 19.3823 22.2346 18.8452 22.2346C18.3081 22.2346 17.8687 22.6741 17.8687 23.2112C17.8687 23.7483 18.3081 24.1877 18.8452 24.1877C19.3823 24.1877 19.8218 23.7483 19.8218 23.2112ZM22.9468 23.2112C22.9468 22.6741 22.5073 22.2346 21.9702 22.2346C21.4331 22.2346 20.9937 22.6741 20.9937 23.2112C20.9937 23.7483 21.4331 24.1877 21.9702 24.1877C22.5073 24.1877 22.9468 23.7483 22.9468 23.2112Z" fill="white"/>
+      </svg></div> 
 
 </div>
 <div class="button-wrapper">
-  <button class="custom-ok-button" cdkFocusInitial>Save album</button>
+  <button class="custom-ok-button" (click)="saveAlbum()" cdkFocusInitial>Save album</button>
   <div class="btn-no-wrapper">
-  <button class="custom-no-button" (click)="onNoClick()"><img class="icon-x" src="../../../assets/icon-x.svg"></button>
+  <button class="custom-no-button" (click)="onNoClick()"><img class="icon-x " src="../../../assets/icon-x.svg"></button>
+</div>
 </div>
 </div>

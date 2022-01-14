@@ -1,43 +1,179 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+
 /* You can add global styles to this file, and also import other style files */
-*{
-    font-family: 'Montserrat' !important;
+* {
+  font-family: 'Montserrat' ;
 }
 
-body{
-    margin:0;
+body {
+  margin: 0;
 
 }
 
 //created a class in the roundedbutton
-.custom-dialog{
-    min-width: 100vw;
-    width:100vw;
-    height:65vh;
+.custom-dialog {
+  width: 100vw;
+  min-width: 100vw;
+  height: 65vh;
 
-   
 
-    .mat-dialog-container{
-        background-color: #C4CDE9;
-        position: absolute;
-        border-radius: 33px 33px 0 0 ;
-        padding-top: 57px;
-        padding-left: 40px;
-        padding-right: 40px;
-        padding-bottom: 100px;
-        height:auto;
-        bottom:0;
-        .mat-dialog-title{
-            margin-bottom:40px;
-        }
-        .mat-dialog-content{    padding-left: 0px;
-        padding-right: 0px;
-        margin-right: 0px;
-        margin-left: 0px;
-        width: 100%;
-        .mat-form-field{
-            display: initial;
-        }
-    }
+  .mat-dialog-container {
+    background-color: #C4CDE9;
+    position: absolute;
+    border-radius: 33px 33px 0 0;
+    padding-top: 57px;
+    padding-left: 40px;
+    padding-right: 40px;
+    height: auto;
+    bottom: 0;
+    padding-bottom: 100px;
+    @media (min-width: theme('screens.md')) {
+      width: 72vw;
+      padding-bottom: 22.6vw;
 
     }
+    @media (min-width: theme('screens.lg')) {
+      width: 30vw;
+      height: 100vh;
+      right: 0px;
+      border-radius: 45px 0 0 0 ;
+      padding-bottom: 7vw;
+
+
+    }
+
+    .mat-dialog-title {
+      margin-bottom: 40px;
+    }
+
+    .mat-dialog-content {
+      padding-left: 0px;
+      padding-right: 0px;
+      margin-right: 0px;
+      margin-left: 0px;
+      width: 100%;
+      overflow: initial;
+
+      .mat-form-field {
+        display: initial;
+      }
+    }
+    .button-wrapper {
+      
+
+      @media (min-width: theme('screens.lg')) {
+        height: 90px;
+        
+      }
+
+      .custom-no-button {
+        width: 110px;
+        float: left;
+        height: 110px;
+        border-radius: 100%;
+        background-color: white;
+        margin-left: 30px;
+        border: none;
+
+        @media (min-width: theme('screens.md')) {
+          margin-right: 5vw;
+          width: 16.666667vw;
+          height: 16.666667vw;
+          float: right;
+          margin-left: 0;
+        }
+
+        @media (min-width: theme('screens.lg')) {
+            width: 8vw;
+            float: left;
+            height: 8vw;
+            border-radius: 100%;
+            background-color: white;
+            margin-left: 30px;
+            border: none;
+        }
+      }
+    }
+  }
 }
+
+
+//custom form field styles
+
+
+// error outline color
+.mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+  color: #000ac6;
+}
+// focus outline color
+.mat-form-field-appearance-outline.mat-form-field.mat-focused.mat-form-field.mat-focused .mat-form-field-outline-thick {
+  color: #000ac6;
+}
+// focus outline label
+.mat-form-field-appearance-outline.mat-form-field.mat-focused.mat-form-field.mat-focused .mat-form-field-label {
+  color: #000ac6;
+  span{color:blue;}
+}
+// normal states
+/* Border */
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: white;
+}
+/* Font color */
+input.mat-input-element {
+  color: white;
+}
+.mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  color: #000ac6;
+}
+
+.mat-error {
+  color: #000ac6;
+}
+
+.mat-datepicker-content {
+  background-color: #ABB6D9;  
+}
+
+
+.mat-datepicker-content .mat-calendar {
+  width: 80vw!important;
+  height:auto!important;
+  @media (min-width: theme('screens.md')) {
+    width: calc(72vw - 80px)!important;
+  }
+  @media (min-width: theme('screens.lg')) {
+    width: calc(30vw - 80px)!important;
+  }
+  
+  
+}
+.mat-calendar-body-selected {
+  background-color: #000ac6;
+}
+
+/*.mat-calendar-body-cell-preview {
+  background-color: red;
+
+}*/
+.mat-datepicker-toggle-default-icon {
+color:white;
+}
+
+.mat-select-panel{
+  background: white;
+  min-width:unset;
+}
+.mat-option-text{
+  color:black;
+
+}
+.mat-optgroup-label{
+  color:black;
+}
+
+.mat-calendar-body-in-range::before{}

@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RoundbtnExpandComponent } from './roundbtn-expand.component';
 
-import { MapComponent } from './map.component';
-
-describe('MapComponent', () => {
-  let component: MapComponent;
-  let fixture: ComponentFixture<MapComponent>;
+describe('RoundbtnExpandComponent', () => {
+  let component: RoundbtnExpandComponent;
+  let fixture: ComponentFixture<RoundbtnExpandComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MapComponent ]
+      declarations: [ RoundbtnExpandComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MapComponent);
+    fixture = TestBed.createComponent(RoundbtnExpandComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

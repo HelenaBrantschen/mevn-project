@@ -1,4 +1,3 @@
-import { FlexibleConnectedPositionStrategy } from '@angular/cdk/overlay';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { OverlayComponent } from '../overlay/overlay.component';
@@ -11,17 +10,15 @@ import { OverlayComponent } from '../overlay/overlay.component';
 })
 export class RoundbtnComponent {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog) {}
 
  
   public openDialog(): void {
     const dialogRef = this.dialog.open(OverlayComponent, {
       panelClass: 'custom-dialog',
-      width:'250px',
     });
   
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
     });
   }
 }
