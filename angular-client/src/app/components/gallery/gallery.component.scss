@@ -1,26 +1,20 @@
 
-.container{
-  
+.container{ 
     padding:0;
     margin:2px;
 }
 
 .postsquare{
     padding:0;
-   //height:50vw;
     background-color: #F3F6FF;
     overflow: hidden;
     margin: 1px;
-    
-   // display: inline-block;
-    
 }
 .wrapper{
-display: flex;
-position: relative;
+    display: flex;
+    position: relative;
     overflow: hidden;
     width:100%
-  
 }
 
 .image-wrapper{
@@ -41,8 +35,6 @@ position: relative;
 .hoverbg-wrapper{
     background-color: #ABB6D9;
     position: absolute;
-    //width: auto;
-   // height:50vw;
     z-index:5;
     opacity: 0;
     word-wrap: break-word;
@@ -55,8 +47,8 @@ position: relative;
     color:white;
     margin:20px;
     font-family: Montserrat;
-font-weight: 600;
-font-size: 28px;
-line-height: 34px;
-letter-spacing: -0.02em;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: -0.02em;
 }

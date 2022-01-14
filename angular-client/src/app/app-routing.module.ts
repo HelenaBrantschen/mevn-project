@@ -6,8 +6,6 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {path: '', component: GalleryComponent},
   {path: 'post/:id', component: PostComponent},
-
-
 ];
 
 @NgModule({

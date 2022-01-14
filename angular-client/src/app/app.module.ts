@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { GalleryComponent } from "./components/gallery/gallery.component";
 import { HttpClientModule } from "@angular/common/http";
 import { RoundbtnComponent } from './components/roundbtn/roundbtn.component';
-import { MapComponent } from './components/map/map.component';
 import { BtnNavComponent } from './components/btn-nav/btn-nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OverlayModule } from '@angular/cdk/overlay';
@@ -32,7 +31,6 @@ registerLocaleData(localeCH);
         AppComponent,
         GalleryComponent,
         RoundbtnComponent,
-        MapComponent,
         BtnNavComponent,
         OverlayComponent,
         RoundbtnExpandComponent,
@@ -61,11 +59,9 @@ registerLocaleData(localeCH);
     providers: [
         {
           provide: MatDialogRef,
-
-        
           useValue: {}
-        },{provide: LOCALE_ID, useValue: 'de-CH' },
-        
+        },
+        {provide: LOCALE_ID, useValue: 'de-CH' },
      ],
     bootstrap: [AppComponent]
 })

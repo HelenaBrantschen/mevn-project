@@ -10,7 +10,7 @@ import { OverlayComponent } from '../overlay/overlay.component';
 })
 export class RoundbtnComponent {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog) {}
 
  
   public openDialog(): void {
@@ -19,7 +19,6 @@ export class RoundbtnComponent {
     });
   
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
     });
   }
 }

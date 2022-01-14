@@ -1,5 +1,6 @@
-input {position: absolute; display: none}
-
+input {
+  position: absolute; display: none
+}
 * {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -11,9 +12,8 @@ input {position: absolute; display: none}
  position: fixed;
  bottom:15%;
  right:25%;
- 
-  
 }
+
 .btn {
   width: 60px;
   height: 60px;
@@ -23,12 +23,13 @@ input {position: absolute; display: none}
   cursor: pointer;
   background-color:#F3F6FF;
 }
+
 .big-btn{
   width:90px;
   height:90px;
   background-color: #BFC9E8;
-  
 }
+
 .big-btn .material-icons.md-36{
   color: white;
 }
@@ -50,30 +51,27 @@ input#toggle:checked ~ #show-options .btn .btn-small{
   background: #F3F6FF;
 }
 
-
 .material-icons.md-36 { 
   font-size: 33px; 
-  color: #444343; }
+  color: #444343; 
+}
 
-  //center icon
 .btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; 
-  
+  -ms-flex-align: center;
+  align-items: center; 
 }
 
 .btn:not(:first-child) {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   z-index: -2;
-  
   -webkit-transition: all 0.6s cubic-bezier(.87,-.41,.19,1.44);
   transition: all 0.6s cubic-bezier(.87,-.41,.19,1.44);
 }
@@ -120,5 +118,4 @@ input#toggle:checked ~ #show-options .btn .closeBtn {
   .material-icons.md-36:hover, .material-icons.md-36:focus {
     color:white;
   }
-  
 }

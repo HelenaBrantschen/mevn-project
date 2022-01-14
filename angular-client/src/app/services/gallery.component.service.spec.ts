@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { GalleryComponentService } from './gallery.component.service';
 
 describe('Gallery.ComponentService', () => {

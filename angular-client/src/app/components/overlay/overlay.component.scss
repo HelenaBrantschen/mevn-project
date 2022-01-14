@@ -38,19 +38,19 @@ color: #FFFFFF;
   height:90px;
   margin-left: -40px;
   overflow:hidden;
-position:fixed;
-bottom:0;
+  position:fixed;
+  bottom:0;
   display: flex;
   align-self: flex-end;
   @media (min-width: theme('screens.md')){
     height: 22.6vw;
-}
-@media (min-width: theme('screens.lg')){
-  height:4.5vw;
-}
-.mat-placeholder-required .mat-form-field-required-marker {
-  color:white;
-}
+  }
+  @media (min-width: theme('screens.lg')){
+   height:4.5vw;
+  }
+  .mat-placeholder-required .mat-form-field-required-marker {
+    color:white;
+  }
 .custom-ok-button{
   padding: 15px;
   padding-top: 25px;
@@ -78,11 +78,10 @@ bottom:0;
 .btn-no-wrapper{
 width:30vw;
 overflow: hidden;
-
 @media (min-width: theme('screens.lg')){
   border-radius: 45px 0 0 0;
   width: 10vw;
-}
+  }
 }
 
 
@@ -98,7 +97,6 @@ overflow: hidden;
 #note-textarea{
   @media(min-width: theme('screens.md')){
     height: 15vh; //5vh for ipad pro
-    
   }
   @media(min-width: theme('screens.lg')){
     height: 25vh;

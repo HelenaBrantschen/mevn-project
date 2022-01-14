@@ -20,11 +20,10 @@ export class GalleryComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.posts$ = await this.httpService.loadPosts();
+
     this.posts$.subscribe(value => console.log(value))
   }
   public onClickPost(id: any) {
-    console.log(id, "POST")
-   // this.service.onClickPost(id._id);
     this.router.navigate(["/post", id])
   }
 }
