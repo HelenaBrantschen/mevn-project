@@ -72,8 +72,10 @@ mat-label{
     overflow: hidden;
 }
 .header-image{
-    width:100vw;
     z-index:90;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 .datum-cutout{
     z-index:100;
@@ -93,7 +95,7 @@ mat-label{
 .title{
 font-family:"Montserrat";
 font-weight: 800;
-line-height: 34,13px;
+line-height: 34px;
 font-size: 28px; 
 }
 .content{
